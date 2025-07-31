@@ -230,7 +230,11 @@ const Bai2 = [
             "Workshop/JAD": "Biên bản họp & bảng thống nhất yêu cầu",
             "Phỏng vấn (Interview)": "Ghi âm hoặc biên bản hỏi–đáp cá nhân",
             "Phiếu khảo sát": "Bảng hỏi đã tổng hợp kết quả"
-        }
+        },
+        "distractors": [
+            "Xây dựng nhanh một bản mẫu giao diện ",
+            "Các tài liệu thu thập được: tài liệu quy trình, sổ tay hướng dẫn"
+        ]
     },
     {
         "id": 19,
