@@ -3,6 +3,8 @@
 import { Card, CardContent } from "./Card";
 import MatchingQuestion from './MatchingQuestion'
 import MultipleChoiceQuestion from './MultipleChoiceQuestion';
+import Login from './Login';
+
 // App.jsx
 import Bai1, { tenBai as tenBai1 } from './data/Bai1';
 import Bai2, { tenBai as tenBai2 } from './data/Bai2';
@@ -21,16 +23,17 @@ import QuestionNavigator from './QuestionNavigator';
 // Môn Kiến Trúc
 
 
-
-
-
 export default function App() {
+  const [user, setUser] = useState(() => localStorage.getItem("user"));
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [selectedLesson, setSelectedLesson] = useState("bai1");
   const topRef = useRef(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(60 * 40); // 40 phút
+  // Log in fun
+  
+
 
   useEffect(() => {
     if (submitted) return;
@@ -39,6 +42,15 @@ export default function App() {
     }, 1000);
     return () => clearInterval(timer);
   }, [submitted]);
+
+    
+    if (!user) {
+      return <Login onLogin={(username) => {
+        localStorage.setItem("user", username);
+        setUser(username); //!importan: trigger re-render để vào quiz
+      }} />;
+    }
+
 
 
   const lessons = {
