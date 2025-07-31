@@ -1,0 +1,7 @@
+#!/bin/bash
+cd quiz-app
+npm run build
+cd ..
+git add quiz-app/dist -f
+git commit -m "update web"
+git subtree push --prefix quiz-app/dist origin gh-pages
