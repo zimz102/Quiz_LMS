@@ -26,6 +26,8 @@ export default function Login({ onLogin }) {
         }
     };
 
+    
+
     return (
         <div className="min-h-screen grid place-items-center bg-gray-200 w-screen">
             <div className="max-w-md w-full p-6 bg-white shadow rounded">
